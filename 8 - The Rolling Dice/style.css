@@ -1,0 +1,113 @@
+body {
+    background-color: #AEB8FE;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.diceNumber {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+.diceNumber button {
+    display: block;
+    border: none;
+    font-size: 1.5rem;
+    width: 2rem;
+}
+button:first-child {
+    border-radius: 50% 0 0 50%;
+}
+button:last-child {
+    border-radius: 0 50% 50% 0;
+}
+.diceNumber div{
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+    padding-top: 2px;
+    background: white;
+}
+
+.diceContainer {
+    background: #0000FF0F;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.die {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, #EEE 0%, #FFF 100%);
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box
+}
+
+.face {
+    height: 100%;
+    display: grid;
+    grid-template:  "tl tm tr" 1fr
+                    "ml mm mr" 1fr
+                    "bl bm br" 1fr / 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.dot {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+/* .d1 {background: red }
+.d2 {background: orange }
+.d3 {background: yellow }
+.d4 {background: green }
+.d5 {background: blue }
+.d6 {background: purple } */
+
+/* Faces */
+.f-1 .d1 { grid-area: mm }
+.f-1 .d2, .f-1 .d3, .f-1 .d4, .f-1 .d5, .f-1 .d6 { display: none }
+
+.f-2 .d1 { grid-area: bl }
+.f-2 .d2 { grid-area: tr }
+.f-2 .d3, .f-2 .d4, .f-2 .d5, .f-2 .d6 { display: none }
+
+.f-3 .d1 { grid-area: bl }
+.f-3 .d2 { grid-area: mm }
+.f-3 .d3 { grid-area: tr }
+.f-3 .d4, .f-3 .d5, .f-3 .d6 { display: none }
+
+.f-4 .d1 { grid-area: bl }
+.f-4 .d2 { grid-area: tl }
+.f-4 .d3 { grid-area: tr }
+.f-4 .d4 { grid-area: br } 
+.f-4 .d5, .f-4 .d6 { display: none }
+
+.f-5 .d1 { grid-area: bl }
+.f-5 .d2 { grid-area: tl }
+.f-5 .d3 { grid-area: mm }
+.f-5 .d4 { grid-area: tr } 
+.f-5 .d5 { grid-area: br}
+.f-5 .d6 { display: none }
+
+.f-6 .d1 { grid-area: bl }
+.f-6 .d2 { grid-area: ml }
+.f-6 .d3 { grid-area: tl }
+.f-6 .d4 { grid-area: tr } 
+.f-6 .d5 { grid-area: mr }
+.f-6 .d6 { grid-area: br }
+
+
+textarea {
+    resize: none;
+    overflow: hidden;
+}
