@@ -1,0 +1,87 @@
+/*
+Thanks to these fine individuals from Unsplash:
+https://unsplash.com/photos/AmzKuEnr1VY
+https://unsplash.com/photos/eDnJQL21amc
+https://unsplash.com/photos/LXy2DOOxESQ
+https://unsplash.com/photos/KBKHXjhVQVM
+https://unsplash.com/photos/PxM8aeJbzvk
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Playfair Display';
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 20% 200px 20%;
+    place-content: center;
+}
+
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.previous, .next {
+    width: 35px;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    opacity: 0.7;
+    background: #535353;
+    transform: scale(1);
+    transition: opacity 0.25s ease, transform 0.25s ease-in-out;
+}
+
+.previous:hover, .next:hover {
+    opacity: 1;
+}
+
+.previous:active, .next:active {
+    transform: scale(0.9)
+}
+
+.gallery {
+    transform-style: preserve-3d;
+    display: grid;
+    transition: transform 0.5s ease-in-out;
+    grid-template: "main" 100% / 100%;
+}
+
+.card {
+    margin-right: 20px;
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    grid-area: main;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.card.current {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 100;
+}
+
+.card.forward {
+    transform: translateX(220px) scale(0.5);
+}
+
+.card.back {
+    transform: translateX(-220px) scale(0.5);
+}
